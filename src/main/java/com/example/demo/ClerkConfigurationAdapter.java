@@ -1,17 +1,28 @@
 package com.example.demo;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 @Order(1)
-public class App1ConfigurationAdapter extends WebSecurityConfigurerAdapter {
+public class ClerkConfigurationAdapter extends WebSecurityConfigurerAdapter {
 	
-	public App1ConfigurationAdapter() {
+	public ClerkConfigurationAdapter() {
 		super();
 	}
+	
+	 @Override
+	 protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+		 auth.inMemoryAuthentication().withUser("clerk")
+		 	.password(encoder().encode("clerk"))
+		 	.roles("CLERK");
+	 }
 	
 	 @Override
 	    protected void configure(HttpSecurity http) throws Exception {
@@ -40,5 +51,10 @@ public class App1ConfigurationAdapter extends WebSecurityConfigurerAdapter {
 	          .and()
 	          .csrf().disable();
 	    }
+	 
+	 @Bean
+	 public static PasswordEncoder encoder() {
+		 return new BCryptPasswordEncoder();
+	 }
 
 }

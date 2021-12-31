@@ -10,5 +10,26 @@ public class ApplicationController {
 	public String goHome() {
 		return "index";
 	}
-
+	
+	@GetMapping("loginCustomer")
+	public String customerLogin() {
+		return "loginCustomer";
+	}
+	
+	@GetMapping("loginClerk")
+		public String clerkLogin() {
+			return "loginClerk";
+		}
+	
+	@GetMapping("signupCustomer")
+	public String customerSignup() {
+		return "signupCustomer";
+	}
+	
+	@GetMapping("signupClerk")
+	public String clerkSignup() {
+		return "signupClerk";
+	}
 }
+
+
