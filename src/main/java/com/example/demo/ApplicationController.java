@@ -30,6 +30,41 @@ public class ApplicationController {
 	public String clerkSignup() {
 		return "signupClerk";
 	}
+	
+	@GetMapping("customerProfile")
+	public String customerProfile() {
+		return "customerProfile";
+	}
+	
+	@GetMapping("clerkProfile")
+	public String clerkProfile() {
+		return "clerkProfile";
+	}
+	
+	@GetMapping("movies")
+	public String goToMovies() {
+		return "movies";
+	}
+	
+	@GetMapping("tvShows")
+	public String goToTVShows() {
+		return "tvShows";
+	}
+	
+	@GetMapping("videoGames")
+	public String goToVideoGames() {
+		return "videoGames";
+	}
+	
+	@GetMapping("itemsRented")
+	public String goToItemsRented() {
+		return "itemsRented";
+	}
+	
+	@GetMapping("itemsRentedPrev")
+	public String goToItemsRentedPrev() {
+		return "itemsRentedPrev";
+	}
 }
 
 

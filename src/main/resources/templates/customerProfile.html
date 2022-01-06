@@ -2,9 +2,29 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link href="index.css" rel="stylesheet"/>
+<title>Customer Profile</title>
 </head>
+
 <body>
+
+	<h1 style="text-align: center">John Doe's Profile</h1>
+	
+	<nav class="profile-nav">
+		<a th:ref="@{/customerProfile}">Profile</a>
+		<div class="dropdown">
+  			<button class="dropbtn">Rent an Item</button>
+  				<div class="dropdown-content">
+    				<a th:href="@{/movies}">Movies</a>
+   					<a th:href="@{/tvShows}">TV Shows</a>
+    				<a th:href="@{/videoGames}">Video Games</a>
+  				</div>
+		</div>
+		<a th:href="@{/itemsRented}" style="">Currently Rented</a>
+		<a th:href="@{/itemsRentedPrev}">Previously Rented</a>
+		<a th:href="@{/index.html}">Logout</a>
+	
+	</nav>
 
 </body>
 </html>
