@@ -1,25 +1,16 @@
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <link href="index.css" rel="stylesheet"/>
-<title>Customer Signup</title>
+<title>Edit Profile</title>
 </head>
 
 <body>
-<div class="login-signup-center">
-<h1 style="text-align: center">Customer Signup</h1>
-<form name="f" action="" method="POST">
+<div class="profile-nav-clerk" style="padding-top: 50px">
+	<h1>Edit Profile</h1>
+	<form name="f" action="/clerkProfile" method="POST">
     <table>
-    	 <tr>
-            <td>First Name:</td>
-            <td><input type="text" name="firstName" value=""></td>
-        </tr>
-        <tr>
-            <td>Last Name:</td>
-            <td><input type="password" name="lastName" /></td>
-        </tr>
         <tr>
             <td>Username:</td>
             <td><input type="text" name="username" value=""></td>
@@ -35,3 +26,5 @@
 </form>
 </div>
 </body>
+
+</html>

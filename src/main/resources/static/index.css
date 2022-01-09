@@ -26,16 +26,22 @@ table, th, td {
 	width: 17%;
 }
 
-.profile-nav {
+.profile-nav-customer {
 	margin: auto;
 	width: 50%;
 	
 }
 
+.profile-nav-clerk {
+	margin: auto;
+	width: 30%;
+}
+
 a {
 	display: inline-block;
-	padding-right: 50px;
+	padding-right: 30px;
 	text-decoration: none;
+	color: blue;
 }
 
 a:visited {

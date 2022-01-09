@@ -3,10 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <link href="index.css" rel="stylesheet"/>
-<title>Customer Profile</title>
+<title>Clerk Profile</title>
 </head>
 
 <body>
+
+	<h1 style="text-align: center">[Username]'s Profile [Clerk]</h1>
+	
+	<nav class="profile-nav-clerk" style="padding-bottom: 50px">
+		<a th:href="@{/clerkProfile}">Profile</a>
+		<div class="dropdown">
+  			<button class="dropbtn">Items</button>
+  				<div class="dropdown-content">
+    				<a th:href="@{/movies}">Movies</a>
+   					<a th:href="@{/tvShows}">TV Shows</a>
+    				<a th:href="@{/videoGames}">Video Games</a>
+  				</div>
+		</div>
+		<a th:href="@{/customers}" style="padding-left: 5px">Customers</a>
+		<a th:href="@{/editClerk}">Edit Profile</a>
+		<a th:href="@{/logoutSuccess}">Logout</a>
+	
+	</nav>
+	
+	 <table style="padding-top: 0px" class="table">
+        <tr>
+            <td>First Name:</td>
+            <td>[First Name]</td>
+        </tr>
+        <tr>
+            <td>Last Name:</td>
+            <td>[Last Name]</td>
+        </tr>
+    </table>
 
 </body>
 </html>

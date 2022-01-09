@@ -8,10 +8,10 @@
 
 <body>
 
-	<h1 style="text-align: center">John Doe's Profile</h1>
+	<h1 style="text-align: center">[Username]'s Profile [Customer]</h1>
 	
-	<nav class="profile-nav">
-		<a th:ref="@{/customerProfile}">Profile</a>
+	<nav class="profile-nav-customer" style="padding-bottom: 50px">
+		<a th:href="@{/customerProfile}">Profile</a>
 		<div class="dropdown">
   			<button class="dropbtn">Rent an Item</button>
   				<div class="dropdown-content">
@@ -20,11 +20,25 @@
     				<a th:href="@{/videoGames}">Video Games</a>
   				</div>
 		</div>
-		<a th:href="@{/itemsRented}" style="">Currently Rented</a>
+		<a th:href="@{/itemsRented}" style="padding-left: 30px">Currently Rented</a>
 		<a th:href="@{/itemsRentedPrev}">Previously Rented</a>
-		<a th:href="@{/index.html}">Logout</a>
+		<a th:href="@{/editCustomer}">Edit Profile</a>
+		<a th:href="@{/logoutSuccess}">Logout</a>
 	
 	</nav>
+	
+	 <table style="padding-top: 0px" class="table">
+        <tr>
+            <td>First Name:</td>
+            <td>[First Name]</td>
+        </tr>
+        <tr>
+            <td>Last Name:</td>
+            <td>[Last Name]</td>
+        </tr>
+    </table>
+    
+	
 
 </body>
 </html>

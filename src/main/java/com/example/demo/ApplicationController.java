@@ -1,15 +1,27 @@
 package com.example.demo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.example.demo.services.CustomerServices;
+
 @Controller
 public class ApplicationController {
+	
+	@Autowired
+	CustomerServices customerService;
 	
 	@GetMapping("index")
 	public String goHome() {
 		return "index";
 	}
+	
+	@GetMapping("logoutSuccess")
+	public String logout() {
+		return "logoutSuccess";
+	}
+
 	
 	@GetMapping("loginCustomer")
 	public String customerLogin() {
@@ -64,6 +76,16 @@ public class ApplicationController {
 	@GetMapping("itemsRentedPrev")
 	public String goToItemsRentedPrev() {
 		return "itemsRentedPrev";
+	}
+	
+	@GetMapping("editCustomer")
+	public String goToEditCustomer() {
+		return "editCustomer";
+	}
+	
+	@GetMapping("editClerk")
+	public String goToEditClerk() {
+		return "editClerk";
 	}
 }
 
