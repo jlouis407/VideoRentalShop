@@ -1,16 +1,12 @@
 package com.example.demo;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.example.demo.services.CustomerServices;
 
 @Controller
 public class ApplicationController {
 	
-	@Autowired
-	CustomerServices customerService;
 	
 	@GetMapping("index")
 	public String goHome() {
@@ -87,6 +83,12 @@ public class ApplicationController {
 	public String goToEditClerk() {
 		return "editClerk";
 	}
-}
+	
+	@GetMapping("customers")
+		public String goToCustomers() {
+			return "customers";
+		}
+	}
+
 
 

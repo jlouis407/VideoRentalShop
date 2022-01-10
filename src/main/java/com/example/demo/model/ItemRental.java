@@ -21,10 +21,6 @@ public class ItemRental {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "customer_id", referencedColumnName = "id")
-	private Customer customer;
-	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "item_upc", referencedColumnName = "upc")
 	private Item item;
@@ -42,10 +38,9 @@ public class ItemRental {
 		
 	}
 
-	public ItemRental(Long id, Customer customer, Item item, Date rentalDate, Date dueDate, Date returnedDate) {
+	public ItemRental(Long id, Item item, Date rentalDate, Date dueDate, Date returnedDate) {
 		super();
 		this.id = id;
-		this.customer = customer;
 		this.item = item;
 		this.rentalDate = rentalDate;
 		this.dueDate = dueDate;
@@ -58,14 +53,6 @@ public class ItemRental {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public Customer getCustomer() {
-		return customer;
-	}
-
-	public void setCustomer(Customer customer) {
-		this.customer = customer;
 	}
 
 	public Item getItem() {
@@ -100,11 +87,7 @@ public class ItemRental {
 		this.returnedDate = returnedDate;
 	}
 
-	@Override
-	public String toString() {
-		return "ItemRental [id=" + id + ", customer=" + customer + ", item=" + item + ", rentalDate=" + rentalDate
-				+ ", dueDate=" + dueDate + ", returnedDate=" + returnedDate + "]";
-	}
+	
 	
 	
 
